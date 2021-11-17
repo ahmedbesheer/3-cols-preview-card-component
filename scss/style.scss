@@ -1,0 +1,169 @@
+// Variables
+  $bg-main: hsl(31, 77%, 52%);
+  $bg-secondary: hsl(184, 100%, 22%);
+  $bg-tertiary: hsl(179, 100%, 13%);
+
+  $text-main: hsl(0, 0%, 95%);
+  $text-secondary: hsla(0, 0%, 100%, 0.75);
+
+  $main-font-stack: 'Lexend Deca', sans-serif;
+  $secondary-font-stack: 'Big Shoulders Display', cursive;
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: $text-main;
+  font-family: $main-font-stack;
+  font-size: .9rem;
+  font-weight: 400;
+  color: $text-secondary;
+}
+
+.preview {
+  width: 90%;
+  max-width: 950px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 3rem 0;
+}
+
+.card {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+
+  &--orange {
+    background-color: $bg-main;
+
+    .card__btn {
+      color: $bg-main;
+    }
+  }
+
+  &--drk-cyan {
+    background-color: $bg-secondary;
+
+    .card__btn {
+      color: $bg-secondary;
+    }
+  }
+
+  &--vdrk-cyan {
+    background-color: $bg-tertiary;
+
+    .card__btn {
+      color: $bg-tertiary;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+  }
+
+  &__heading {
+    font-family: $secondary-font-stack;
+    color: $text-main;
+    font-size: 2.75rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    line-height: 1;
+  }
+
+  &__text {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+
+    @media (min-width: 59.4em) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__btn:link,
+  &__btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    background: $text-main;
+    border-radius: 100px;
+    padding: 1rem 2rem;
+    transition: .2s;
+    margin-top: auto;
+    align-self: flex-start;
+
+    &:hover,
+    &:active {
+      background: transparent;
+      color: $text-main;
+      box-shadow: inset 0 0 0 2px $text-main;
+    }
+  }
+}
+
+.attribution {
+  text-align: center;
+  color: initial;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+
+  a {
+    color: hsl(228, 45%, 44%);
+
+    &:link,
+    &:visited {
+      color: hsl(245, 75%, 52%);
+      transition: color .2s;
+      text-decoration: none;
+      padding-bottom: 2px;
+      box-shadow: 0 2px 0 0 hsl(245, 75%, 52%);
+      font-weight: 700;
+    }
+
+    &:active,
+    &:hover {
+      color: hsl(245, 69%, 40%);
+      box-shadow: none;
+    }
+  }
+
+  span {
+    color: hsl(0, 100%, 47%);
+    font-size: 1.25rem;
+  }
+}
+
+// Media Queries
+
+// For devices are wider than 600px
+@media (min-width: 37.5em) {
+  .preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card--vdrk-cyan {
+    grid-column: span 2;
+  }
+}
+
+// For devices are wider than 950px
+@media (min-width: 59.375em) {
+  .preview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card--vdrk-cyan {
+    grid-column: span 1;
+  }
+}
