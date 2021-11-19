@@ -92,6 +92,7 @@ body {
   transition: 0.2s;
   margin-top: auto;
   align-self: flex-start;
+  outline:none;
 }
 .card__btn:link:hover, .card__btn:link:active, .card__btn:visited:hover, .card__btn:visited:active {
   background: transparent;
